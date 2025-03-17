@@ -1,14 +1,11 @@
-<script>
-    fetch('https://kenji0909.github.io/geojson-data/data.geojson')  // 外部ファイルを読み込む
-        .then(response => response.json())
-        .then(data => {
-            L.geoJSON(data, {
-                onEachFeature: function (feature, layer) {
-                    if (feature.properties && feature.properties.name) {
-                        layer.bindPopup(feature.properties.name);
-                    }
-                }
-            }).addTo(map);
-        })
-        .catch(error => console.error('Error loading the GeoJSON file:', error));
-</script>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>GeoJSON Viewer</title>
+</head>
+<body>
+    <h1>GeoJSON ファイルを公開しました！</h1>
+    <p><a href="data.geojson">data.geojson を開く</a></p>
+</body>
+</html>
